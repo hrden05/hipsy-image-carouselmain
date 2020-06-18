@@ -7,10 +7,8 @@ USE hipsyimage;
 DROP TABLE IF EXISTS item;
 		
 CREATE TABLE item (
-  id INT NOT NULL AUTO_INCREMENT,
-  product_id INTEGER,
-  department VARCHAR(50),
-  PRIMARY KEY (ID)
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  department VARCHAR(50)
 );
 
 -- ---
@@ -21,18 +19,27 @@ CREATE TABLE item (
 DROP TABLE IF EXISTS image;
 		
 CREATE TABLE image (
-  id INT NOT NULL AUTO_INCREMENT,
+  id INT AUTO_INCREMENT PRIMARY KEY,
   image_url VARCHAR(100),
   item_id INTEGER,
-  PRIMARY KEY (ID)
+  product_id INTEGER,
+  CONSTRAINT fk_categorya
+  FOREIGN KEY (item_id)
+  REFERENCES item(id)
+    ON UPDATE CASCADE
+    ON DELETE CASCADE
+  -- CONSTRAINT fk_categoryb
+  -- FOREIGN KEY (product_id)
+  -- REFERENCES item(id)
+  --   ON UPDATE CASCADE
+  --   ON DELETE CASCADE
 );
 
 -- ---
 -- Foreign Keys 
 -- ---
 
-ALTER TABLE image ADD FOREIGN KEY (item_id) REFERENCES item (id);
-ALTER TABLE item ADD FOREIGN KEY (product_id) REFERENCES item (id);
+
 
 
 

@@ -3,5 +3,6 @@ module.exports = {
 
   password: 'p4j4m4sII!',
 
-  database: 'minteger',
+  database: 'hipsyimage',
+  multipleStatements: true,
 };
