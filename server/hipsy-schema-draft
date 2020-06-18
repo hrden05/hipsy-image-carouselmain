@@ -1,0 +1,56 @@
+-- ---
+-- Globals
+-- ---
+
+-- SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+-- SET FOREIGN_KEY_CHECKS=0;
+
+-- ---
+-- Table 'item'
+-- 
+-- ---
+
+DROP TABLE IF EXISTS `item`;
+		
+CREATE TABLE `item` (
+  `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
+  `product_id` INTEGER NOT NULL AUTO_INCREMENT,
+  `department` VARCHAR NOT NULL,
+  PRIMARY KEY (`id`)
+);
+
+-- ---
+-- Table 'image'
+-- 
+-- ---
+
+DROP TABLE IF EXISTS `image`;
+		
+CREATE TABLE `image` (
+  `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
+  `image_url` VARCHAR NOT NULL,
+  `item_id` INTEGER NOT NULL,
+  PRIMARY KEY (`id`)
+);
+
+-- ---
+-- Foreign Keys 
+-- ---
+
+ALTER TABLE `image` ADD FOREIGN KEY (item_id) REFERENCES `item` (`id`);
+
+-- ---
+-- Table Properties
+-- ---
+
+-- ALTER TABLE `item` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+-- ALTER TABLE `image` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- ---
+-- Test Data
+-- ---
+
+-- INSERT INTO `item` (`id`,`product_id`,`department`) VALUES
+-- ('','','');
+-- INSERT INTO `image` (`id`,`image_url`,`item_id`) VALUES
+-- ('','','');
