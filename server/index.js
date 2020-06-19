@@ -7,16 +7,28 @@ const model = require('./model/images.js');
 const app = express();
 const PORT = 3000;
 
-app.use(parser.json());
 app.use(morgan('dev'));
-app.use(express.json());
+app.use(parser.json());
+app.use(parser.urlencoded({extended: true}));
+app.use(express.static(path.join(__dirname, '../dist')));
 
-app.get('/api/images', (req, res, next) => {
+app.get('/api/images', (req, res) => {
   model.getAll()
     .then((images) => {
       res.status(200).send(images);
     })
-    .error((error) => {
+    .catch((error) => {
+      res.status(400).send(error);
+    });
+});
+
+app.get('/api/images/:itemId', (req, res) => {
+  console.log(req.params);
+  model.getItem(Number(req.params.itemId))
+    .then((images) => {
+      res.status(200).send(images);
+    })
+    .catch((error) => {
       res.status(400).send(error);
     });
 });
