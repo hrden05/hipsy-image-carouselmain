@@ -1,13 +1,9 @@
 const mysql = require('mysql');
 
 const Promise = require('bluebird');
+const connectInfo = require('./db/connectInfo.js');
 
-const connection = mysql.createConnection({
-  user: 'root',
-  password: 'p4j4m4sII!',
-  database: 'hipsyimage',
-  multipleStatements: true,
-});
+const connection = mysql.createConnection(connectInfo);
 
 const db = Promise.promisifyAll(connection, { multiArgs: true });
 
