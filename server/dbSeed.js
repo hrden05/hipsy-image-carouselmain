@@ -1,7 +1,7 @@
 const mysql = require('mysql');
 
 const Promise = require('bluebird');
-const connectInfo = require('./db/connectInfo.js');
+const connectInfo = require('./db/connectInfoGarbage.js');
 
 const connection = mysql.createConnection(connectInfo);
 

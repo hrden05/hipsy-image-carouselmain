@@ -1,7 +1,7 @@
 const mysql = require('mysql');
 const Promise = require('bluebird');
 
-const connectInfo = require('./connectInfo.js');
+const connectInfo = require('./connectInfoGarbage.js');
 
 const database = 'hipsyimage';
 
