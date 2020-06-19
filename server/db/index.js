@@ -1,6 +1,6 @@
 const mysql = require('mysql');
-const tableConfig = require('./config.js');
 const Promise = require('bluebird');
+
 const database = 'hipsyimage';
 
 const connection = mysql.createConnection({

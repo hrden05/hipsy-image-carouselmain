@@ -1,7 +1,6 @@
 const mysql = require('mysql');
-const tableConfig = require('./db/config.js');
+
 const Promise = require('bluebird');
-const database = 'hipsyimage';
 
 const connection = mysql.createConnection({
   user: 'root',
@@ -36,7 +35,7 @@ const masterSeed = () => {
   };
 
   const randomImageNumber = (id) => {
-    let imageCount = Math.random() * (10 - 2) + 2;
+    const imageCount = Math.random() * (10 - 2) + 2;
     for (let j = 0; j <= imageCount; j += 1) {
       seedDb2(id);
     }

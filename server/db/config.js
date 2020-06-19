@@ -25,7 +25,7 @@ module.exports = (db) => {
         ON DELETE CASCADE
         );`);
     })
-    .error(err => {
+    .error((err) => {
       console.log(err);
     });
 };
