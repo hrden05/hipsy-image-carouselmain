@@ -14,10 +14,7 @@ module.exports = {
       {
         test: /\.jsx?/,
         include: SRC_DIR,
-        loader: 'babel-loader',
-        query: {
-          presets: ['@babel/preset-react', '@babel/preset-env'],
-        },
+        use: 'babel-loader',
       },
     ],
   },
