@@ -2,9 +2,9 @@ import React from 'react';
 
 class ImagesStack extends React.Component {
   constructor() {
-    super()
+    super();
     this.state = {
-      corn: []
+      corn: [],
     };
   }
 

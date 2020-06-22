@@ -23,6 +23,9 @@ module.exports = {
     'react',
   ],
   rules: {
-    'arrow-body-style': ['off']
+    'arrow-body-style': ['off'],
+    'no-undef': ['off'],
+    'react/no-unused-state': ['off'],
+    'import/no-extraneous-dependencies': ['off']
   },
 };

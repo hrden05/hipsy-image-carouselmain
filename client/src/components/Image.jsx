@@ -4,7 +4,7 @@ class Image extends React.Component {
   constructor() {
     super();
     this.state = {
-      poenis: []
+      poenis: [],
     };
   }
 
