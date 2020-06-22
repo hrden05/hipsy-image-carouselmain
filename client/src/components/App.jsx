@@ -1,5 +1,7 @@
 import React from 'react';
 import FeatureImagesContainer from './FeatureImagesContainer.jsx';
+import ImagesStack from './ImagesStack.jsx';
+import Arrow from './Arrow.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -13,8 +15,9 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>TESTRENDER</h1>
         <FeatureImagesContainer />
+        <ImagesStack />
+        <Arrow />
       </div>
     );
   }
