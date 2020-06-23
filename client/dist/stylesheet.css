@@ -78,7 +78,7 @@ html body {
   align-self: stretch;
   display: grid;
   grid-template-columns: 66px minmax(min-content, 700px);
-  grid-template-rows: minmax(min-content, 500px);
+  grid-template-rows: minmax(50%, 500px);
   grid-gap: 6px;
   position: relative;
   overflow: hidden;
@@ -89,7 +89,7 @@ html body {
   grid-column-start: 1;
   grid-column-end: 2;
   width: 66px;
-  
+  object-fit: cover;
   align-items: center;
   position: relative;
   overflow: hidden;
@@ -107,6 +107,7 @@ html body {
 .StackImage img {
   position: relative;
   align-self: top;
+  object-fit: cover;
   border: 1px solid #ddd;
   border-radius: 4px;
   width: 60px;
@@ -117,9 +118,7 @@ html body {
   position: relative;
   align-self: end;
   height: auto;
-  object-fit: cover;
-  margin: 0 auto;
-  white-space: nowrap;
+  object-fit: scale-down;
   border-radius: 4px;
 }
 
