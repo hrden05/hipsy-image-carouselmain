@@ -1,10 +1,10 @@
 import React from 'react';
 import { shallow, mount, render } from 'enzyme';
 import Adapter from '../setupTests';
-import Image from './Image';
+import StackImage from './StackImage';
 
-describe('<Image />', () => {
+describe('<StackImage />', () => {
   it('should mount in a full DOM', () => {
-    expect(mount(<Image />).find('.Image').length).toBe(1);
+    expect(mount(<StackImage />).find('.StackImage').length).toBe(1);
   });
 });
