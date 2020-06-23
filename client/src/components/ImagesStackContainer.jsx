@@ -16,7 +16,6 @@ class ImagesStackContainer extends React.Component {
     });
     return (
       <div className="ImagesStackContainer">
-        <h1>ImagesStackContainer</h1>
         {stackItem}
       </div>
     );

@@ -26,9 +26,9 @@ class App extends React.Component {
   render() {
     console.log('state', this.state);
     return (
-      <div>
-        <FeatureImagesContainer images={this.state.images} />
+      <div className="wrapper">
         <ImagesStackContainer images={this.state.images} />
+        <FeatureImagesContainer images={this.state.images} />
         <Arrow />
       </div>
     );
