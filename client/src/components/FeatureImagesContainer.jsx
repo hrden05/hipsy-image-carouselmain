@@ -1,22 +1,17 @@
 import React from 'react';
 import Image from './Image.jsx';
 
-class FeatureImagesContainer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      peony: [],
-    };
-  }
+const FeatureImagesContainer = (props) => {
+  const featureImage = props.images.map((image) => {
+    console.log('image', image);
+    return <Image key={image.id} source={image.image_url} />;
+  });
 
-  render() {
-    return (
-      <div id="ImagesContainer">
-        <h1>Another Test</h1>
-        <Image />
-      </div>
-    );
-  }
-}
+  return (
+    <div className="ImagesContainer">
+      {featureImage}
+    </div>
+  );
+};
 
 export default FeatureImagesContainer;

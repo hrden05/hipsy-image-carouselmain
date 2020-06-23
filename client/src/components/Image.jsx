@@ -10,8 +10,8 @@ class Image extends React.Component {
 
   render() {
     return (
-      <div id="Image">
-        <h1>Image test</h1>
+      <div className="Image">
+        <img src={this.props.source} alt={this.props.product_id} />
       </div>
     );
   }

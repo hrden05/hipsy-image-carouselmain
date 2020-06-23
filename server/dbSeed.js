@@ -20,7 +20,7 @@ const masterSeed = () => {
   };
 
   const seedDb2 = (value2) => {
-    const insertQuery2 = 'INSERT INTO image (image_url, item_id, product_id) VALUES ("placeimg.com/700/700/any", ?, ?)';
+    const insertQuery2 = 'INSERT INTO image (image_url, item_id, product_id) VALUES ("http://placeimg.com/700/700/any", ?, ?)';
     db.queryAsync(insertQuery2, [value2, value2], (error, results) => {
       if (error) {
         console.log('error seeding', error);

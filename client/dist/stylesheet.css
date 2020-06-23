@@ -1,6 +1,53 @@
-.image {
-  border-radius: 15 px;
+
+.hero {
+  padding: 4rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
+
+.App {
+  display: grid;
+  grid-template-columns: repeat(6 1fr);
+  grid-template-rows: repeat(8 1fr);
+  grid-column-start: 1;
+  grid-column-end: span 4;
+  grid-row-end: span 6;
+}
+
+.StackImage div {
+  align-items: flex-start;
+}
+
+.StackImage img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 6px;
+  width: 60px;
+  height: 60px;
+}
+
+.Image div {
+  align-items: flex-start;
+}
+.Image img {
+  position: relative;
+  height: 5fr;
+  width: 7fr;
+  margin: 0 auto;
+  overflow: hidden;
+  white-space: nowrap;
+  border-radius: 4px;
+}
+
+/* #ImagesContainer{
+  width: 625px;
+  height: 415px;
+}
+
+.Image {
+  width: 625px;
+  height: 415px;
+} */
 
 /* 
 .appreciation-photo-container {

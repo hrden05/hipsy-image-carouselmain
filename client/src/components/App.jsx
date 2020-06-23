@@ -1,7 +1,11 @@
 import React from 'react';
 import FeatureImagesContainer from './FeatureImagesContainer.jsx';
-import ImagesStack from './ImagesStack.jsx';
+import ImagesStackContainer from './ImagesStackContainer.jsx';
 import Arrow from './Arrow.jsx';
+
+import tempData from '../../dist/tempData';
+
+const getWidth = () => window.innerWidth;
 
 class App extends React.Component {
   constructor(props) {
@@ -12,11 +16,19 @@ class App extends React.Component {
     };
   }
 
+  componentDidMount() {
+    this.setState({
+      images: tempData,
+    });
+    console.log('tempdata', tempData);
+  }
+
   render() {
+    console.log('state', this.state);
     return (
       <div>
-        <FeatureImagesContainer />
-        <ImagesStack />
+        <FeatureImagesContainer images={this.state.images} />
+        <ImagesStackContainer images={this.state.images} />
         <Arrow />
       </div>
     );
