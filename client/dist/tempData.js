@@ -1,31 +1,31 @@
 const tempData = [
   {
     id: 129,
-    image_url: "http://placeimg.com/700/500/animals",
+    image_url: "http://placeimg.com/1075/640/animals",
     item_id: 20,
     product_id: 20,
   },
   {
     id: 130,
-    image_url: "http://placeimg.com/700/500/nature",
+    image_url: "http://placeimg.com/1075/640/nature",
     item_id: 20,
     product_id: 20,
   },
   {
     id: 131,
-    image_url: "http://placeimg.com/700/500/architecture",
+    image_url: "http://placeimg.com/1075/640/architecture",
     item_id: 20,
     product_id: 20,
   },
   {
     id: 132,
-    image_url: "http://placeimg.com/700/500/tech",
+    image_url: "http://placeimg.com/1075/640/tech",
     item_id: 20,
     product_id: 20,
   },
   {
     id: 133,
-    image_url: "http://placeimg.com/700/500/people",
+    image_url: "http://placeimg.com/1075/640/people",
     item_id: 20,
     product_id: 20,
   },

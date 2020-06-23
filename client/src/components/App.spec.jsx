@@ -1,4 +1,5 @@
 import React from 'react';
+import React from 'react-dom';
 import { shallow, mount, render } from 'enzyme';
 import Adapter from '../setupTests';
 import App from './App';

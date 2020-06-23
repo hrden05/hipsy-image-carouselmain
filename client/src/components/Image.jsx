@@ -3,15 +3,18 @@ import React from 'react';
 class Image extends React.Component {
   constructor() {
     super();
-    this.state = {
-      poenis: [],
-    };
   }
 
   render() {
+    const divStyle = {
+      backgroundImage: `url(${this.props.source})`,
+      alt: `${this.props.product_id}`,
+      border: '1px solid white',
+      borderRadius: '4px',
+    };
     return (
       <div className="Image">
-        <img src={this.props.source} alt={this.props.product_id} />
+        <div style={divStyle} className="Image" />
       </div>
     );
   }
