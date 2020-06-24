@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Image /> Should render correctly in "debug" mode 1`] = `
+<div
+  className="Image"
+>
+  <div
+    className="Image"
+    style={
+      Object {
+        "alt": "undefined",
+        "backgroundImage": "url(undefined)",
+        "border": "1px solid white",
+        "borderRadius": "4px",
+      }
+    }
+  />
+</div>
+`;
