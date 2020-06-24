@@ -1,6 +1,4 @@
 import React from 'react';
-// import leftArrow from '../../dist/images/left-arrow.svg';
-// import rightArrow from '../../dist/images/right-arrow.svg';
 
 const Arrow = ({ direction, handleClick }) => {
   const divStyle = {
@@ -14,7 +12,7 @@ const Arrow = ({ direction, handleClick }) => {
 
   return (
     <div className="Arrow" style={divStyle}>
-      {direction === 'right' ? <img src={rightArrow} alt={'>'} /> : <img src={leftArrow} alt={'<'} />}
+      {direction === 'right' ? <img src="../../dist/images/right-arrow" alt={'>'} /> : <img src="../../dist/images/left-arrow.png" alt={'<'} />}
     </div>
   );
 };
