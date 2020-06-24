@@ -5,8 +5,6 @@ import Arrow from './Arrow.jsx';
 
 import tempData from '../../dist/tempData';
 
-const getWidth = () => window.innerWidth;
-
 class App extends React.Component {
   constructor(props) {
     super(props);

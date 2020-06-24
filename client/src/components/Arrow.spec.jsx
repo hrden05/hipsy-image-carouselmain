@@ -4,7 +4,14 @@ import Adapter from '../setupTests';
 import Arrow from './Arrow';
 
 describe('<Arrow />', () => {
+  it('should render correctly in "debug" mode', () => {
+    const wrapper = shallow(<Arrow debug />);
+    expect(wrapper).toMatchSnapshot();
+  });
+
   it('should mount in a full DOM', () => {
-    expect(mount(<Arrow />).find('.Arrow').length).toBe(1);
+    const wrapper = mount(<Arrow />);
+    expect(wrapper.find('.Arrow').length).toBe(1);
+    wrapper.unmount();
   });
 });
