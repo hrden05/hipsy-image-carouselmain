@@ -10,7 +10,7 @@ const PORT = 3000;
 app.use(morgan('dev'));
 app.use(parser.json());
 app.use(parser.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, '../dist')));
+app.use(express.static(path.join(__dirname, '../client/dist')));
 
 app.get('/api/images', (req, res) => {
   model.getAll()

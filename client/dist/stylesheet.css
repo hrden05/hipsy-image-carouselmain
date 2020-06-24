@@ -1,0 +1,122 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 2. v2.0 | 20110126
+  License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/*
+clearfixe above
+*/
+
+html body {
+  display: grid;
+  margin: 0 auto;
+}
+#page {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+#app {
+  position: relative;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 6;
+  overflow: hidden;
+  display: grid;
+}
+
+.wrapper {
+  align-self: stretch;
+  display: grid;
+  grid-template-columns: 66px minmax(min-content, 700px);
+  grid-template-rows: minmax(50%, 500px);
+  grid-gap: 6px;
+  position: relative;
+  overflow: hidden;
+  padding: 0 0 0 30px;
+}
+
+.ImagesStackContainer {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  width: 60px;
+  object-fit: cover;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.ImagesContainer {
+  min-width:750px;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  position: relative;
+  overflow: hidden;
+}
+
+.StackImage img {
+  position: relative;
+  align-self: top;
+  object-fit: cover;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 60px;
+  height: 60px;
+}
+
+.Image {
+  position: relative;
+  max-width:1075px;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
