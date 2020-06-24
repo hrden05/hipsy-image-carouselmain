@@ -6,9 +6,16 @@ const FeatureImagesContainer = (props) => {
     console.log('image', image);
     return <Image key={image.id} source={image.image_url} />;
   });
+  const divStyle = {
+    transform: `translateX(-${props.translate}px)`,
+    transition: `transform ease-out ${props.transition}s`,
+    maxHeight: '100%',
+    width: `${props.width}px`,
+    display: 'flex',
+  };
 
   return (
-    <div className="ImagesContainer">
+    <div className="ImagesContainer" style={divStyle}>
       {featureImage}
     </div>
   );

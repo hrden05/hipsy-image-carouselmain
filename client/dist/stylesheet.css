@@ -77,9 +77,9 @@ html body {
 .wrapper {
   align-self: stretch;
   display: grid;
-  grid-template-columns: 66px minmax(min-content, 700px);
-  grid-template-rows: minmax(50%, 500px);
-  grid-gap: 6px;
+  grid-template-columns: 60px minmax(min-content, 700px);
+  grid-template-rows: minmax(20%, 500px);
+  grid-gap: 3px;
   position: relative;
   overflow: hidden;
   padding: 0 0 0 30px;
@@ -96,11 +96,12 @@ html body {
 }
 
 .ImagesContainer {
-  min-width:750px;
   grid-column-start: 2;
   grid-column-end: 3;
   position: relative;
   overflow: hidden;
+  border: 1px solid white;
+  border-radius: 4px;
 }
 
 .StackImage img {
@@ -109,14 +110,56 @@ html body {
   object-fit: cover;
   border: 1px solid #ddd;
   border-radius: 4px;
-  width: 60px;
-  height: 60px;
+  width: 58px;
+  height: 58px;
 }
 
 .Image {
   position: relative;
-  max-width:1075px;
   height: 100%;
+  width: 100%;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
+  background-position: center;
 }
+
+.Arrow {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  height: 50px;
+  width: 50px;
+  justify-content: center;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+  align-items: center;
+  transition: transform ease-in 0.1s;
+}
+.Arrow:hover {
+  transform: scale(1.1);
+}
+.Arrow img:focus {
+  outline: 0;
+}
+/* css={css`
+  display: flex;
+  position: absolute;
+  top: 50%;
+  ${direction === 'right' ? `right: 25px` : `left: 25px`};
+  height: 50px;
+  width: 50px;
+  justify-content: center;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+  align-items: center;
+  transition: transform ease-in 0.1s;
+  &:hover {
+    transform: scale(1.1);
+  }
+  img {
+    transform: translateX(${direction === 'left' ? '-2' : '2'}px);
+    &:focus {
+      outline: 0;
+    } */
