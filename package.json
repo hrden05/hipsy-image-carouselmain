@@ -13,7 +13,7 @@
     "start": "node server/index.js",
     "dbCreate": "node server/dbCreate.js",
     "dbSeed": "node server/dbSeed.js",
-    "test": "jest --coverage --watch"
+    "test": "jest"
   },
   "dependencies": {
     "@babel/core": "^7.10.2",
