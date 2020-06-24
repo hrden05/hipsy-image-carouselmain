@@ -2,3 +2,4 @@ node_modules
 /server/db/connectInfoGarbage.*
 notes
 __snapshots__
+coverage
