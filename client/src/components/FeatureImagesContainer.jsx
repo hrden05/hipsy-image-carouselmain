@@ -21,3 +21,11 @@ const FeatureImagesContainer = (props) => {
 };
 
 export default FeatureImagesContainer;
+
+{/* <Carousel showArrows={true} showThumbs={true}>
+{
+    images.map((url, index) => (
+       <img key={index} src={url} />
+    ))
+}
+</Carousel> */}
