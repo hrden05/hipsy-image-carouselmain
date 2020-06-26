@@ -37,8 +37,8 @@ const App = () => {
     if (activeIndex === 0) {
       return setState({
         ...state,
-        translate: (imageslength - 1) * getHeight(),
-        activeIndex: imageslength - 1,
+        translate: (images.length - 1) * getHeight(),
+        activeIndex: images.length - 1,
       });
     }
 
