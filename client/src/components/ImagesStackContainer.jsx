@@ -1,25 +1,25 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import StackImage from './StackImage.jsx';
 
-class ImagesStackContainer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      corn: [],
-    };
-  }
-
-  render() {
-    const stackItem = this.props.images.map((image) => {
-      console.log('stackimage', image);
-      return <StackImage key={image.id} source={image.image_url} />;
-    });
+const ImagesStackContainer = (props) => {
+  console.log('stacoontainer', props);
+  const stackItem = props.images.map((image, index) => {
     return (
-      <div className="ImagesStackContainer">
-        {stackItem}
-      </div>
+      <StackImage
+        key={image.id}
+        source={image.image_url}
+        activeIndex={props.activeIndex}
+        imageIndex={index}
+        handleClick={props.handleClick}
+      />
     );
-  }
-}
+  });
+
+  return (
+    <div id="stack" className="ImagesStackContainer">
+      {stackItem}
+    </div>
+  );
+};
 
 export default ImagesStackContainer;

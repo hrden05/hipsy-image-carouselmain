@@ -13,7 +13,7 @@
     "start": "node server/index.js",
     "dbCreate": "node server/dbCreate.js",
     "dbSeed": "node server/dbSeed.js",
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "dependencies": {
     "@babel/core": "^7.10.2",
@@ -27,6 +27,7 @@
     "faker": "^4.1.0",
     "fakergem": "^2.1.0",
     "jest-nyan-reporter": "^1.0.2",
+    "jquery": "^3.5.1",
     "morgan": "^1.10.0",
     "mysql": "^2.18.1",
     "nodemon": "^2.0.4",
@@ -50,7 +51,9 @@
     "react-test-renderer": "^16.13.1"
   },
   "jest": {
-    "snapshotSerializers": ["enzyme-to-json/serializer"],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
     "reporters": [
       [
         "jest-nyan-reporter",

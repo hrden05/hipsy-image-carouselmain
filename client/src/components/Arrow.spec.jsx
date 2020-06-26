@@ -9,6 +9,16 @@ describe('<Arrow />', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  it('should render left arrow', () => {
+    const wrapper = shallow(<Arrow direction="left" />);
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render right arrow', () => {
+    const wrapper = shallow(<Arrow direction="right" />);
+    expect(wrapper).toMatchSnapshot();
+  });
+
   it('should mount in a full DOM', () => {
     const wrapper = mount(<Arrow />);
     expect(wrapper.find('.Arrow').length).toBe(1);

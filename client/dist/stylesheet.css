@@ -75,11 +75,10 @@ html body {
 }
 
 .wrapper {
-  align-self: stretch;
   display: grid;
-  grid-template-columns: 66px minmax(min-content, 700px);
-  grid-template-rows: minmax(50%, 500px);
-  grid-gap: 6px;
+  grid-template-columns: 60px minmax(700px, 1054px);
+  grid-template-rows: minmax(20%, 500px);
+  grid-gap: 3px;
   position: relative;
   overflow: hidden;
   padding: 0 0 0 30px;
@@ -95,28 +94,69 @@ html body {
   overflow: hidden;
 }
 
-.ImagesContainer {
-  min-width:750px;
-  grid-column-start: 2;
-  grid-column-end: 3;
-  position: relative;
-  overflow: hidden;
-}
-
 .StackImage img {
   position: relative;
   align-self: top;
   object-fit: cover;
   border: 1px solid #ddd;
   border-radius: 4px;
-  width: 60px;
-  height: 60px;
+  width: 58px;
+  height: 58px;
+}
+
+.StackImage img:hover {
+  transform: scale(1.1);
+}
+
+.ImagesContainer {
+  width: auto;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid white;
+  border-radius: 4px;
 }
 
 .Image {
   position: relative;
-  max-width:1075px;
   height: 100%;
+  width: 100%;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
+  background-position: center;
+}
+.divArrow {
+  grid-column-start: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  display: contents;
+}
+
+.Arrow {
+  display: grid;
+  grid-column-start: 2;
+  grid-column-end: auto;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  position: absolute;
+  top: 50%;
+  height: 50px;
+  width: 50px;
+  justify-content: center;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+  align-items: center;
+  transition: transform ease-in 0.1s;
+}
+.Arrow:hover {
+  transform: scale(1.1);
+}
+.Arrow img {
+  height: 50px;
+  width: 50px;
+}
+.Arrow img:focus {
+  outline: 0;
 }

@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const StackImage = (props) => {
-  console.log("stackimageprops", props);
   return (
     <div className="StackImage">
-      <img src={props.source} alt={props.product_id} />
+      <img
+        id={props.imageIndex}
+        src={props.source}
+        alt={props.product_id}
+        onClick={props.handleClick}
+      />
     </div>
   );
 };
