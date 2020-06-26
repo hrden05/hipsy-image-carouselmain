@@ -104,6 +104,10 @@ html body {
   height: 58px;
 }
 
+.StackImage img:hover {
+  transform: scale(1.1);
+}
+
 .ImagesContainer {
   width: auto;
   grid-column-start: 2;

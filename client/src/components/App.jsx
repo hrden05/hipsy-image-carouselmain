@@ -11,9 +11,9 @@ const App = () => {
   const [state, setState] = useState({
     activeIndex: 0,
     translate: 0,
-    transition: 0.45,
+    transition: 0.2,
   });
-  console.log('images in app', images);
+
   const { translate, transition, activeIndex } = state;
 
   const nextSlide = () => {
@@ -47,10 +47,45 @@ const App = () => {
       translate: (activeIndex - 1) * getHeight(),
     });
   };
+  // const slidesToInvoke = (number, direction) => {
+  //   if (number > 0) {
+  //     for (let i = 0; i < number; i += 1) {
+  //       console.log('number', number);
+  //       direction();
+  //       setTimeout(() => console.log('wait'), 500);
+  //     }
+  //   }
+  // };
+  const positiveSlide = (number) => {
+    setState({
+      ...state,
+      activeIndex: (activeIndex + number),
+      translate: ((activeIndex + number) * getHeight()),
+    });
+  };
 
+  const negativeSlide = (number) => {
+    setState({
+      ...state,
+      activeIndex: activeIndex - number,
+      translate: (activeIndex - number) * getHeight(),
+    });
+  };
+  const changeIndex = (event) => {
+    const targetIndex = event.target.id;
+    const transtlateNumber = targetIndex - activeIndex;
+    console.log('target', transtlateNumber);
+    return (transtlateNumber < 0)
+      ? negativeSlide(Math.abs(transtlateNumber))
+      : positiveSlide(transtlateNumber);
+  };
   return (
     <div className="wrapper">
-      <StackContainer activeIndex={activeIndex} images={images} />
+      <StackContainer
+        handleClick={changeIndex}
+        activeIndex={activeIndex}
+        images={images}
+      />
       <FeatureImagesContainer
         images={images}
         translate={translate}
