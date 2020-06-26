@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import StackImage from './StackImage.jsx';
 
 const ImagesStackContainer = (props) => {
-console.log('stacoontainer', props);
+  console.log('stacoontainer', props);
   const stackItem = props.images.map((image, index) => {
     return (
       <StackImage

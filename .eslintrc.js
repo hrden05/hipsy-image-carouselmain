@@ -35,6 +35,9 @@ module.exports = {
     'react/prefer-stateless-function': ['off'],
     'react/no-this-in-sfc': ['off'],
     'react/prop-types': ['off'],
-    'consistent-return': ['off']
+    'consistent-return': ['off'],
+    'jsx-ally/click-events-have-key-events': ['off'],
+    'jsx-a11y/no-noninteractive-element-interactions': ['off'],
+    'jsx-a11y/click-events-have-key-events': ['off']
   },
 };

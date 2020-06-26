@@ -47,15 +47,7 @@ const App = () => {
       translate: (activeIndex - 1) * getHeight(),
     });
   };
-  // const slidesToInvoke = (number, direction) => {
-  //   if (number > 0) {
-  //     for (let i = 0; i < number; i += 1) {
-  //       console.log('number', number);
-  //       direction();
-  //       setTimeout(() => console.log('wait'), 500);
-  //     }
-  //   }
-  // };
+
   const positiveSlide = (number) => {
     setState({
       ...state,
@@ -74,7 +66,6 @@ const App = () => {
   const changeIndex = (event) => {
     const targetIndex = event.target.id;
     const transtlateNumber = targetIndex - activeIndex;
-    console.log('target', transtlateNumber);
     return (transtlateNumber < 0)
       ? negativeSlide(Math.abs(transtlateNumber))
       : positiveSlide(transtlateNumber);
