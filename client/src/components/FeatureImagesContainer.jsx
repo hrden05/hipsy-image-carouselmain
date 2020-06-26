@@ -1,31 +1,25 @@
 import React from 'react';
 import Image from './Image.jsx';
+import Arrow from './Arrow.jsx';
 
 const FeatureImagesContainer = (props) => {
   const featureImage = props.images.map((image) => {
     return <Image key={image.id} source={image.image_url} />;
   });
   const divStyle = {
-    transform: `translateX(-${props.translate}px)`,
+    transform: `translatey(-${props.translate}px)`,
     transition: `transform ease-out ${props.transition}s`,
-    maxHeight: '100%',
-    width: `${props.width}px`,
+    width: '100%',
+    height: `${props.height}px`,
     display: 'flex',
+    flexDirection: 'column',
   };
 
   return (
-    <div className="ImagesContainer" style={divStyle}>
+    <div id="view" className="ImagesContainer" style={divStyle}>
       {featureImage}
     </div>
   );
 };
 
 export default FeatureImagesContainer;
-
-{/* <Carousel showArrows={true} showThumbs={true}>
-{
-    images.map((url, index) => (
-       <img key={index} src={url} />
-    ))
-}
-</Carousel> */}

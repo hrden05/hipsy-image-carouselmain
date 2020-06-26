@@ -75,9 +75,8 @@ html body {
 }
 
 .wrapper {
-  align-self: stretch;
   display: grid;
-  grid-template-columns: 60px minmax(min-content, 700px);
+  grid-template-columns: 60px minmax(700px, 1054px);
   grid-template-rows: minmax(20%, 500px);
   grid-gap: 3px;
   position: relative;
@@ -95,15 +94,6 @@ html body {
   overflow: hidden;
 }
 
-.ImagesContainer {
-  grid-column-start: 2;
-  grid-column-end: 3;
-  position: relative;
-  overflow: hidden;
-  border: 1px solid white;
-  border-radius: 4px;
-}
-
 .StackImage img {
   position: relative;
   align-self: top;
@@ -114,6 +104,16 @@ html body {
   height: 58px;
 }
 
+.ImagesContainer {
+  width: auto;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid white;
+  border-radius: 4px;
+}
+
 .Image {
   position: relative;
   height: 100%;
@@ -122,9 +122,19 @@ html body {
   background-size: cover;
   background-position: center;
 }
+.divArrow {
+  grid-column-start: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  display: contents;
+}
 
 .Arrow {
-  display: flex;
+  display: grid;
+  grid-column-start: 2;
+  grid-column-end: auto;
+  grid-row-start: 1;
+  grid-row-end: 2;
   position: absolute;
   top: 50%;
   height: 50px;
@@ -139,9 +149,14 @@ html body {
 .Arrow:hover {
   transform: scale(1.1);
 }
+.Arrow img {
+  height: 50px;
+  width: 50px;
+}
 .Arrow img:focus {
   outline: 0;
 }
+
 /* css={css`
   display: flex;
   position: absolute;

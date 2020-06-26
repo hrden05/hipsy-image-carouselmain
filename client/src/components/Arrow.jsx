@@ -9,10 +9,10 @@ const Arrow = ({ direction, handleClick }) => {
   } else {
     divStyle.left = '25px';
   }
-
+console.log('diiiivstyyyle', divStyle);
   return (
-    <div className="Arrow" style={divStyle}>
-      {direction === 'right' ? <img src="../../dist/images/right-arrow" alt={'>'} /> : <img src="../../dist/images/left-arrow.png" alt={'<'} />}
+    <div className="divArrow" >
+      {direction === 'right' ? <img className="Arrow" src="./images/right-arrow.png" alt={'>'} style={divStyle} onClick={handleClick} /> : <img className="Arrow" src="./images/left-arrow.png" alt={'<'} style={divStyle} onClick={handleClick} />}
     </div>
   );
 };

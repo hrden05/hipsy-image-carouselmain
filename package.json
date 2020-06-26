@@ -27,6 +27,7 @@
     "faker": "^4.1.0",
     "fakergem": "^2.1.0",
     "jest-nyan-reporter": "^1.0.2",
+    "jquery": "^3.5.1",
     "morgan": "^1.10.0",
     "mysql": "^2.18.1",
     "nodemon": "^2.0.4",
@@ -50,7 +51,9 @@
     "react-test-renderer": "^16.13.1"
   },
   "jest": {
-    "snapshotSerializers": ["enzyme-to-json/serializer"],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
     "reporters": [
       [
         "jest-nyan-reporter",
