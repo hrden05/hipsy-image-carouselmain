@@ -38,6 +38,7 @@ module.exports = {
     'consistent-return': ['off'],
     'jsx-ally/click-events-have-key-events': ['off'],
     'jsx-a11y/no-noninteractive-element-interactions': ['off'],
-    'jsx-a11y/click-events-have-key-events': ['off']
+    'jsx-a11y/click-events-have-key-events': ['off'],
+    'no-param-reassign': ['off']
   },
 };
