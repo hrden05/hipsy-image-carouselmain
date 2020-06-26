@@ -1,0 +1,57 @@
+/* #ImagesContainer{
+  width: 625px;
+  height: 415px;
+}
+
+.Image {
+  width: 625px;
+  height: 415px;
+} */
+
+/* 
+.appreciation-photo-container {
+  min-width:750px;
+  max-width:1075px;
+}
+.appreciation-photo-container .carousel {
+  overflow:initial !important;
+  display:inline-block;
+}
+@media only screen and (min-width: 640px){
+  .appreciation-photo-container .carousel .carousel-nav.nav-right {
+    left:100%;
+    right:auto;
+  }
+  .appreciation-photo-container .carousel .carousel-nav.nav-left{
+    left:auto;
+    right:100%;
+}}
+.appreciation-photo-container.responsive {
+  min-width:0;
+}
+@media only screen and (min-width: 0) and (max-width: 899px){
+  .appreciation-photo-container.responsive .nav-right {
+    right:0;
+    left:auto;
+    top:30%;
+  }
+  .appreciation-photo-container.responsive .nav-left {
+    right:auto;
+    top:30%;
+}}
+.appreciation-photo-container.wt-overlay__modal {
+  min-height:300px !important; 
+    max-height:640px !important;
+    width:80%;
+    height:40% !important;
+  }
+  .appreciation-photo-container.wt-overlay__modal.responsive {
+    min-width:0;
+    min-height:0;
+    max-height:none !important;
+  }
+  @media only screen and (min-width: 0) and (max-width: 639px) {
+    .appreciation-photo-container.wt-overlay__modal.responsive {
+      width:100%;
+      height:100% !important;
+}} */
