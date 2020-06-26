@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import $ from 'jquery';
 import FeatureImagesContainer from './FeatureImagesContainer.jsx';
-import ImagesStackContainer from './ImagesStackContainer.jsx';
+import StackContainer from './ImagesStackContainer.jsx';
 import Arrow from './Arrow.jsx';
 
 import tempData from '../../dist/tempData';
@@ -51,7 +50,7 @@ const App = () => {
 
   return (
     <div className="wrapper">
-      <ImagesStackContainer images={images} />
+      <StackContainer activeIndex={activeIndex} images={images} />
       <FeatureImagesContainer
         images={images}
         translate={translate}

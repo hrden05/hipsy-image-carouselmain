@@ -34,6 +34,7 @@ module.exports = {
     'no-useless-constructor': ['off'],
     'react/prefer-stateless-function': ['off'],
     'react/no-this-in-sfc': ['off'],
-    'react/prop-types': ['off']
+    'react/prop-types': ['off'],
+    'consistent-return': ['off']
   },
 };
