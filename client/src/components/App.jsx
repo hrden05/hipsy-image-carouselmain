@@ -3,6 +3,7 @@ import axios from 'axios';
 import FeatureImagesContainer from './FeatureImagesContainer.jsx';
 import StackContainer from './ImagesStackContainer.jsx';
 import Arrow from './Arrow.jsx';
+import * as svg from './SvgFiles.jsx';
 
 import tempData from '../../dist/tempData';
 
@@ -107,6 +108,9 @@ const App = () => {
       />
       <Arrow direction="left" handleClick={prevSlide} />
       <Arrow direction="right" handleClick={nextSlide} />
+      <div className="heart">
+        {svg.heart}
+      </div>
     </div>
   );
 };

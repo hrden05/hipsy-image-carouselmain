@@ -37,9 +37,17 @@ const masterSeed = () => {
     "http://placeimg.com/1075/640/people",
     "http://placebeard.it/1075/640",
     "https://www.placecage.com/1075/640",
+    "https://www.placecage.com/1076/640",
+    "https://www.placecage.com/1077/640",
     "https://www.fillmurray.com/1075/640",
+    "https://www.fillmurray.com/1076/640",
+    "https://www.fillmurray.com/1077/640",
     "https://placekitten.com/1075/640",
+    "https://placekitten.com/1076/640",
+    "https://placekitten.com/1077/640",
     "https://baconmockup.com/1075/640/",
+    "https://baconmockup.com/1076/640/",
+    "https://baconmockup.com/1077/640/",
   ];
   const getRandomInt = (min, max) => {
     min = Math.ceil(min);
@@ -49,7 +57,7 @@ const masterSeed = () => {
   const randomImageNumber = (id) => {
     const imageCount = Math.random() * (10 - 2) + 2;
     for (let j = 0; j <= imageCount; j += 1) {
-      const currentEarl = earlArray[getRandomInt(0, 10)];
+      const currentEarl = earlArray[getRandomInt(0, earlArray.length)];
       seedDb2(currentEarl, id);
     }
   };
