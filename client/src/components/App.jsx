@@ -4,10 +4,14 @@ import FeatureImagesContainer from './FeatureImagesContainer.jsx';
 import StackContainer from './ImagesStackContainer.jsx';
 import Arrow from './Arrow.jsx';
 import * as svg from './SvgFiles.jsx';
-
-import tempData from '../../dist/tempData';
+import ModalHeart from './ModalHeart.jsx';
+import ModalImagesContainer from './ModalImagesContainer.jsx';
+import useModalHeart from './useModalHeart.jsx';
+import useModalImage from './useModalImage.jsx';
 
 const App = () => {
+  const { isHeartShowing, toggleHeart } = useModalHeart();
+  const { isImageShowing, toggleImage } = useModalImage();
   const getHeight = () => window.innerHeight * (2 / 3);
   const [images, setImages] = useState([]);
   const [state, setState] = useState({
@@ -105,12 +109,22 @@ const App = () => {
         translate={translate}
         transition={transition}
         height={getHeight() * images.length}
+        handleClick={toggleImage}
       />
       <Arrow direction="left" handleClick={prevSlide} />
       <Arrow direction="right" handleClick={nextSlide} />
-      <div className="heart">
+      <div className="heart" onClick={toggleHeart}>
         {svg.heart}
       </div>
+      <ModalHeart
+        isHeartShowing={isHeartShowing}
+        hide={toggleHeart}
+      />
+      <ModalImagesContainer
+        images={images}
+        isImageShowing={isImageShowing}
+        hide={toggleImage}
+      />
     </div>
   );
 };
