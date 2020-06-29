@@ -96,7 +96,6 @@ const App = () => {
     };
     getImages();
   }, []);
-
   return (isLoading) ? <h1>Loading!</h1> : (
     <div className="wrapper">
       <StackContainer
