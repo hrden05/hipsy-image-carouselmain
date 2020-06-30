@@ -16,6 +16,7 @@ const FeatureImagesContainer = (props) => {
     transform: `translatey(-${props.translate}px)`,
     transition: `transform ease-out ${props.transition}s`,
     maxWidth: '100%',
+    width: 'auto',
     height: `${props.height}px`,
     display: 'flex',
     flexDirection: 'column',
