@@ -1,10 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import StackImage from './StackImage.jsx';
+// import useFeature from './useFeature.jsx';
 
 const ImagesStackContainer = (props) => {
+  // const [isFeature, setFeature] = useState([]);
   const stackItem = props.images.map((image, index) => {
-    console.log('activveindex', props.activeIndex);
+    // if (index === 0) {
+    //   setFeature({ isFeature: true });
+    // } else {
+    //   setFeature({ isTrue: false });
+    // }
 
+    // useEffect(() => {
+    //   setFeature({ isFeature: true });
+    //   console.log('index, activeindex', typeof index, typeof props.activeIndex);
+    // }, [props.activeIndex]);
     return (
       <StackImage
         key={image.id}
@@ -13,7 +23,7 @@ const ImagesStackContainer = (props) => {
         imageIndex={index}
         handleClick={props.handleClick}
         isFeature={props.isFeature}
-        setFeature={props.setFeature}
+        images={props.images}
       />
     );
   });

@@ -1,19 +1,20 @@
 import React, { useState, useEffect } from 'react';
 
 const StackImage = (props) => {
+  // const [isFeature, setFeature] = useState([]);
   console.log('stackimageprops', props);
   const divStyle = { opacity: "50%" };
   const divHighlight = { opacity: "100%" };
 
   return (
     <div
-      // className="StackWrap"
-      // onClick={() => {
-      //   console.log('click!', Event.target);
-      //   setFeature({
-      //     isFeature: true,
-      //   });
-      // }}
+    //   className="StackWrap"
+    //   onClick={() => {
+    //     console.log('click!', Event.target);
+    //     setFeature({
+    //       isFeature: true,
+    //     });
+    //   }}
     >
       <div className="StackImage">
         {(props.isFeature === true)

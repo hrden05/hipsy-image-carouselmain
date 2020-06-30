@@ -148,6 +148,7 @@ html body {
   border-radius: 6px;
   width: 58px;
   height: 58px;
+  opacity: 50%;
 }
 
 .StackImage img:hover {
@@ -155,6 +156,7 @@ html body {
   border-radius: 6px;
   transform: scale(1.1);
   cursor: pointer;
+  opacity: 100% !important;
 }
 
 .ImagesContainer {

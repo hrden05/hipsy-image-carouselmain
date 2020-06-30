@@ -8,9 +8,10 @@ import ModalHeart from './ModalHeart.jsx';
 import ModalImagesContainer from './ModalImagesContainer.jsx';
 import useModalHeart from './useModalHeart.jsx';
 import useModalImage from './useModalImage.jsx';
+import useFeature from './useFeature.jsx';
 
 const App = () => {
-  const [isFeature, setFeature] = useState();
+  const { isFeature, initializeFeature } = useFeature();
   const { isHeartShowing, toggleHeart } = useModalHeart();
   const { isImageShowing, toggleImage } = useModalImage();
   const getHeight = () => window.innerHeight * (2 / 3);
@@ -20,7 +21,7 @@ const App = () => {
     translate: 0,
     transition: 0.2,
   });
-
+  console.log('isfeature', isFeature);
   const {
     translate,
     transition,
@@ -101,36 +102,37 @@ const App = () => {
         .then((response) => {
           const gotImages = response.data[0];
           console.log('response', gotImages);
+          // const featureImages = gotImages.map((imageFeature, index) => {
+          //   return imageFeature;
+          // });
+          // for (var i = 0; i < featureImages.length; i += 1) {
+          //   if (i === 0) {
+          //     setFeature({ featureImages[0]: true})
+          //   } else {
+          //     setFeature({ featureImages[i]: false})
+          //   }
+          // };
           setImages(gotImages);
           setIsLoading(false);
           setState({
             ...state,
             activeUrl: gotImages[0].image_url,
           });
-          gotImages.map((image, index) => {
-            if (index === 0) {
-              setFeature(true);
-            } else {
-              setFeature(false);
-            }
-            console.log('imageinapp', image);
-            console.log('isfeature', isFeature);
-          });
+          // setFeature(() => {
+          //   isFeature: gotImages.map
+          // });
+          // gotImages.map((image, index) => {
+          //   if (index === 0) setFeature();
+          //   // else if (index === activeIndex) setFeature(true);
+          //   console.log('imageinapp', image);
+          //   console.log('isfeature', image.isFeature);
+          // });
         })
         .catch((error) => console.error(error));
     };
     getImages();
   }, []);
-  useEffect(() => {
-    images.map((image, index) => {
-      if (image.imageIndex === image.activeIndex) {
-        setFeature(true);
-      } else {
-        setFeature(false);
-      }
-      console.log('isfeature in own effect', isFeature);
-    });
-  }, [state.activeIndex]);
+
   return (isLoading) ? <h1>Loading!</h1> : (
     <div className="wrapper">
       <StackContainer
