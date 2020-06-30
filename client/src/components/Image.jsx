@@ -9,7 +9,11 @@ const Image = (props) => {
   };
   return (
     <div className="Image">
-      <div style={divStyle} className="Image" />
+      <div
+        style={divStyle}
+        className="Image"
+        onClick={props.handleClick}
+      />
     </div>
   );
 };

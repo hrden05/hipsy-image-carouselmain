@@ -19,9 +19,9 @@ const masterSeed = () => {
     });
   };
 
-  const seedDb2 = (value2) => {
-    const insertQuery2 = 'INSERT INTO image (image_url, item_id, product_id) VALUES ("http://placeimg.com/1075/640/any", ?, ?)';
-    db.queryAsync(insertQuery2, [value2, value2], (error, results) => {
+  const seedDb2 = (value1, value2) => {
+    const insertQuery2 = 'INSERT INTO image (image_url, item_id, product_id) VALUES (?, ?, ?)';
+    db.queryAsync(insertQuery2, [value1, value2, value2], (error, results) => {
       if (error) {
         console.log('error seeding', error);
       } else {
@@ -29,11 +29,36 @@ const masterSeed = () => {
       }
     });
   };
-
+  const earlArray = [
+    "http://placeimg.com/1075/640/animals",
+    "http://placeimg.com/1075/640/nature",
+    "http://placeimg.com/1075/640/architecture",
+    "http://placeimg.com/1075/640/tech",
+    "http://placeimg.com/1075/640/people",
+    "http://placebeard.it/1075/640",
+    "https://www.placecage.com/1075/640",
+    "https://www.placecage.com/1076/640",
+    "https://www.placecage.com/1077/640",
+    "https://www.fillmurray.com/1075/640",
+    "https://www.fillmurray.com/1076/640",
+    "https://www.fillmurray.com/1077/640",
+    "https://placekitten.com/1075/640",
+    "https://placekitten.com/1076/640",
+    "https://placekitten.com/1077/640",
+    "https://baconmockup.com/1075/640/",
+    "https://baconmockup.com/1076/640/",
+    "https://baconmockup.com/1077/640/",
+  ];
+  const getRandomInt = (min, max) => {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min;
+  };
   const randomImageNumber = (id) => {
     const imageCount = Math.random() * (10 - 2) + 2;
     for (let j = 0; j <= imageCount; j += 1) {
-      seedDb2(id);
+      const currentEarl = earlArray[getRandomInt(0, earlArray.length)];
+      seedDb2(currentEarl, id);
     }
   };
 
