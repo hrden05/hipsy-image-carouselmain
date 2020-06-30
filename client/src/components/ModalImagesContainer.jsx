@@ -4,16 +4,11 @@ import { xOut } from './SvgFiles.jsx';
 import ModalImage from './ModalImage.jsx';
 
 const ModalImagesContainer = (props) => {
-  const divStyle = {
-    opacity: "100%",
-    backgroundColor: "black",
-  };
   return (
     props.isImageShowing ? ReactDOM.createPortal(
       <>
         <div className="modalImagesOverlay" />
         <div className="modalImagesWrapper" aria-modal aria-hidden tabIndex={-1} role="dialog">
-          <div style={divStyle} />
           <div className="modalImages">
             <div className="modalImagesHeader">
               <div className="modalImagesCloseButton" data-dismiss="modal" aria-label="Close" onClick={props.hide}>

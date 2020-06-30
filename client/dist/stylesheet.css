@@ -78,7 +78,6 @@ body {
   position: relative;
   min-width: 765px;
   max-width: 1075;
-  max-height: 640px;
   height: auto;
   grid-column-start: 1;
   grid-column-end: 3;
@@ -94,7 +93,6 @@ body {
   grid-template-rows: minmax(350px, 640px);
   min-width: 740px;
   max-width: 1120px;
-  max-height: 640px;
   grid-gap: 3px;
   position: relative;
   overflow: hidden;
@@ -241,7 +239,7 @@ body {
   width: 100vw;
   height: 100vh;
   opacity: .5;
-  background-color: #000;
+  background-color: gray;
 }
 
 .modal-wrapper {
@@ -274,6 +272,7 @@ body {
 }
 
 .modal-header {
+  max-height: 20%;
   display: grid;
   grid-column-start: 1;
   grid-column-end: 6;
@@ -283,7 +282,7 @@ form {
   display: grid;
   position: relative;
   grid-column-start: 2;
-  grid-row-start: 2;
+  grid-row-start: 3;
 }
 
 .modal-close-button {
@@ -349,6 +348,8 @@ form {
 .modalImagesHeader {
   display: contents;
   width: 80%;
+  opacity: .5;
+  background-color: gray;
 }
 
 .modalImagesCloseButton {
@@ -372,11 +373,5 @@ form {
   max-width: 100%;
   border-radius: 6px;
   opacity: 100%;
+  padding: 15px
 }
-
-/* .modal-close-button path {
-  top: 10px;
-  left: 10px;
-  height: 40px;
-  width: 40px;
-} */

@@ -53,7 +53,7 @@ const App = () => {
         ...state,
         translate: (images.length - 1) * getHeight(),
         activeIndex: images.length - 1,
-        activeUrl: images[activeIndex - 1].image_url,
+        activeUrl: images[activeIndex].image_url,
       });
     }
 
@@ -102,37 +102,17 @@ const App = () => {
         .then((response) => {
           const gotImages = response.data[0];
           console.log('response', gotImages);
-          // const featureImages = gotImages.map((imageFeature, index) => {
-          //   return imageFeature;
-          // });
-          // for (var i = 0; i < featureImages.length; i += 1) {
-          //   if (i === 0) {
-          //     setFeature({ featureImages[0]: true})
-          //   } else {
-          //     setFeature({ featureImages[i]: false})
-          //   }
-          // };
           setImages(gotImages);
           setIsLoading(false);
           setState({
             ...state,
             activeUrl: gotImages[0].image_url,
           });
-          // setFeature(() => {
-          //   isFeature: gotImages.map
-          // });
-          // gotImages.map((image, index) => {
-          //   if (index === 0) setFeature();
-          //   // else if (index === activeIndex) setFeature(true);
-          //   console.log('imageinapp', image);
-          //   console.log('isfeature', image.isFeature);
-          // });
         })
         .catch((error) => console.error(error));
     };
     getImages();
   }, []);
-
   return (isLoading) ? <h1>Loading!</h1> : (
     <div className="wrapper">
       <StackContainer
