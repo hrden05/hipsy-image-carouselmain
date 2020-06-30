@@ -7,15 +7,7 @@ const StackImage = (props) => {
   const divHighlight = { opacity: "100%" };
 
   return (
-    <div
-    //   className="StackWrap"
-    //   onClick={() => {
-    //     console.log('click!', Event.target);
-    //     setFeature({
-    //       isFeature: true,
-    //     });
-    //   }}
-    >
+    <div>
       <div className="StackImage">
         {(props.isFeature === true)
           ? (

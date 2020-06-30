@@ -1,20 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import StackImage from './StackImage.jsx';
-// import useFeature from './useFeature.jsx';
 
 const ImagesStackContainer = (props) => {
-  // const [isFeature, setFeature] = useState([]);
   const stackItem = props.images.map((image, index) => {
-    // if (index === 0) {
-    //   setFeature({ isFeature: true });
-    // } else {
-    //   setFeature({ isTrue: false });
-    // }
-
-    // useEffect(() => {
-    //   setFeature({ isFeature: true });
-    //   console.log('index, activeindex', typeof index, typeof props.activeIndex);
-    // }, [props.activeIndex]);
     return (
       <StackImage
         key={image.id}
@@ -30,9 +18,7 @@ const ImagesStackContainer = (props) => {
 
   return (
     <div id="stack" className="ImagesStackContainer">
-      {/* <div className="upDiv" /> */}
       {stackItem}
-      {/* <div className="downDiv" /> */}
     </div>
   );
 };
