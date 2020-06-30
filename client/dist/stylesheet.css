@@ -76,6 +76,10 @@ body {
 
 #app {
   position: relative;
+  min-width: 765px;
+  max-width: 1075;
+  max-height: 640px;
+  height: auto;
   grid-column-start: 1;
   grid-column-end: 3;
   grid-row-start: 2;
@@ -87,9 +91,10 @@ body {
 .wrapper {
   display: grid;
   grid-template-columns: 60px minmax(700px, 1054px);
-  grid-template-rows: minmax(350px, 500px);
-  height: auto;
+  grid-template-rows: minmax(350px, 640px);
+  min-width: 740px;
   max-width: 1120px;
+  max-height: 640px;
   grid-gap: 3px;
   position: relative;
   overflow: hidden;
@@ -105,31 +110,6 @@ body {
   position: relative;
   overflow: hidden;
   transition: transform 2s;
-}
-.upDiv {
-  display: flex;
-  opacity: 0;
-  width: 60px;
-  height: 20px;
-  grid-column-start: 1;
-  grid-row-start: -1;
-}
-
-.upDiv:hover {
-  transform: translateY(50px);
-}
-
-.downDiv {
-  display: flex;
-  opacity: 0;
-  width: 60px;
-  height: 20px;
-  grid-column-start: 1;
-  grid-row-start: 5;
-}
-
-.downDiv:hover {
-  transform: translateY(-50px);
 }
 
 .highlightWrapper {
@@ -173,6 +153,7 @@ body {
 
 .ImagesContainer {
   width: auto;
+  min-width: 700px !important;
   grid-column-start: 2;
   grid-column-end: 3;
   position: relative;
@@ -183,8 +164,10 @@ body {
 
 .Image {
   position: relative;
+  max-height: 640px;
   height: 100%;
   width: auto;
+  min-width: 700px !important;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
