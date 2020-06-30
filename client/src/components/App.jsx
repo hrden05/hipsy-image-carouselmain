@@ -8,10 +8,10 @@ import ModalHeart from './ModalHeart.jsx';
 import ModalImagesContainer from './ModalImagesContainer.jsx';
 import useModalHeart from './useModalHeart.jsx';
 import useModalImage from './useModalImage.jsx';
-import useFeature from './useFeature.jsx';
+// import useFeature from './useFeature.jsx';
 
 const App = () => {
-  const { isFeature, initializeFeature } = useFeature();
+  // const { isFeature, initializeFeature } = useFeature();
   const { isHeartShowing, toggleHeart } = useModalHeart();
   const { isImageShowing, toggleImage } = useModalImage();
   const getHeight = () => window.innerHeight * (2 / 3);
@@ -21,7 +21,7 @@ const App = () => {
     translate: 0,
     transition: 0.2,
   });
-  console.log('isfeature', isFeature);
+  // console.log('isfeature', isFeature);
   const {
     translate,
     transition,
@@ -139,7 +139,7 @@ const App = () => {
         handleClick={changeIndex}
         activeIndex={activeIndex}
         images={images}
-        isFeature={isFeature}
+        // isFeature={isFeature}
       />
       <FeatureImagesContainer
         images={images}

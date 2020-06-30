@@ -249,6 +249,9 @@ html body {
 }
 
 .modal-wrapper {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(6, 1fr);
   position: fixed;
   align-self: center;
   top: 50px;
@@ -261,6 +264,9 @@ html body {
 
 .modal {
   z-index: 100;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(6, 1fr);
   background: white;
   position: relative;
   padding: 18px;
@@ -272,11 +278,22 @@ html body {
 }
 
 .modal-header {
-  display: flex;
-  justify-content: flex-end;
+  display: grid;
+  grid-column-start: 1;
+  grid-column-end: 6;
+}
+
+form {
+  display: grid;
+  position: relative;
+  grid-column-start: 2;
+  grid-row-start: 2;
 }
 
 .modal-close-button {
+  display: grid;
+  grid-column-start: -6;
+  position: relative;
   cursor: pointer;
   color: black;
   background: white;
@@ -294,28 +311,34 @@ html body {
 }
 
 .modalImagesOverlay {
+  display: grid;
+  grid-template-columns: repeat(10, 1r);
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1040;
   width: 100vw;
   height: 100vh;
-  opacity: .8;
-  background-color: #000;
+  opacity: .5;
+  background-color:lightgrey;
 }
 
 .modalImagesWrapper {
-  background-color: black;
+  display: grid;
+  grid-template-columns: repeat(8, 1r);
+  background-color: lightgrey;
+  opacity: .9;
   position: fixed;
   display: grid;
   align-self: center;
   z-index: 1050;
-  width: 80%;
+  width: 100%;
   height: 100%;
   outline: 0;
 }
 
 .modalImages {
+  opacity: 100% !important;
   display: flex;
   flex-direction: column;
   z-index: 100;
@@ -326,8 +349,15 @@ html body {
   width: 100%;
   height: 100%;
 }
+.modalImagesHeader {
+  display: contents;
+  width: 80%;
+}
 
 .modalImagesCloseButton {
+  display: grid;
+  position: relative;
+  grid-column-start: 10;
   cursor: pointer;
   color: black;
   background: white;

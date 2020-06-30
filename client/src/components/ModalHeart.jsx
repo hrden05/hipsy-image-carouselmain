@@ -14,9 +14,13 @@ const ModalHeart = ({ isHeartShowing, hide }) => (
               <span aria-hidden="true" />
             </div>
           </div>
-          <p>
-            Hello modo
-          </p>
+          <form>
+            <label>
+              E-mail:
+              <input type="text" name="name" />
+            </label>
+            <input type="submit" value="Submit" />
+          </form>
         </div>
       </div>
     </>, document.body,
