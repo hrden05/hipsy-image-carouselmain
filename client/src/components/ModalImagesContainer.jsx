@@ -4,14 +4,6 @@ import { xOut } from './SvgFiles.jsx';
 import ModalImage from './ModalImage.jsx';
 
 const ModalImagesContainer = (props) => {
-  const imageModal = props.images.map((image) => {
-    return (
-      <ModalImage
-        key={image.id}
-        source={image.image_url}
-      />
-    );
-  });
   return (
     props.isImageShowing ? ReactDOM.createPortal(
       <>
@@ -24,7 +16,7 @@ const ModalImagesContainer = (props) => {
                 <span aria-hidden="true" />
               </div>
             </div>
-            {imageModal}
+            <ModalImage source={props.activeUrl} />
           </div>
         </div>
       </>, document.body,

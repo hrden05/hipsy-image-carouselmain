@@ -5,7 +5,7 @@ const ModalImage = (props) => {
     <div className="imageModal">
       <img
         src={props.source}
-        alt={props.product_id}
+        alt="fullsizeimage"
       />
     </div>
   );

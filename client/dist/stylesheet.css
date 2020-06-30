@@ -92,6 +92,52 @@ html body {
   align-items: center;
   position: relative;
   overflow: hidden;
+  transition: transform 2s;
+}
+.upDiv {
+  display: flex;
+  opacity: 0;
+  width: 60px;
+  height: 20px;
+  grid-column-start: 1;
+  grid-row-start: -1;
+}
+
+.upDiv:hover {
+  transform: translateY(50px);
+}
+
+.downDiv {
+  display: flex;
+  opacity: 0;
+  width: 60px;
+  height: 20px;
+  grid-column-start: 1;
+  grid-row-start: 5;
+}
+
+.downDiv:hover {
+  transform: translateY(-50px);
+}
+
+.highlightWrapper {
+  position: relative;
+  align-self: top;
+  object-fit: cover;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: 2px solid black;
+  border-radius: 6px;
+  width: 56px;
+  height: 56px;
+  opacity: 100%;
+}
+
+.highlightWrapper img {
+  transform: scale(.95);
+  top: -2px;
+  left: -2px;
 }
 
 .StackImage img {
@@ -102,10 +148,11 @@ html body {
   border-radius: 6px;
   width: 58px;
   height: 58px;
-  opacity: 80%;
 }
 
 .StackImage img:hover {
+  border: 2px solid white;
+  border-radius: 6px;
   transform: scale(1.1);
   cursor: pointer;
 }
@@ -256,7 +303,6 @@ html body {
 }
 
 .modalImagesWrapper {
-  opacity: .5;
   background-color: black;
   position: fixed;
   display: grid;
@@ -294,7 +340,7 @@ html body {
   display: flex;
   position: relative;
   height: auto;
-  width: auto;
+  max-width: 100%;
   border-radius: 6px;
   opacity: 100%;
 }

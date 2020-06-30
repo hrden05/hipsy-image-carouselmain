@@ -10,6 +10,7 @@ import useModalHeart from './useModalHeart.jsx';
 import useModalImage from './useModalImage.jsx';
 
 const App = () => {
+  const [isFeature, setFeature] = useState();
   const { isHeartShowing, toggleHeart } = useModalHeart();
   const { isImageShowing, toggleImage } = useModalImage();
   const getHeight = () => window.innerHeight * (2 / 3);
@@ -20,7 +21,12 @@ const App = () => {
     transition: 0.2,
   });
 
-  const { translate, transition, activeIndex } = state;
+  const {
+    translate,
+    transition,
+    activeIndex,
+    activeUrl,
+  } = state;
 
   const nextSlide = () => {
     if (activeIndex === images.length - 1) {
@@ -28,6 +34,7 @@ const App = () => {
         ...state,
         translate: 0,
         activeIndex: 0,
+        activeUrl: images[activeIndex].image_url,
       });
     }
 
@@ -35,6 +42,7 @@ const App = () => {
       ...state,
       activeIndex: activeIndex + 1,
       translate: (activeIndex + 1) * getHeight(),
+      activeUrl: images[activeIndex + 1].image_url,
     });
   };
 
@@ -44,6 +52,7 @@ const App = () => {
         ...state,
         translate: (images.length - 1) * getHeight(),
         activeIndex: images.length - 1,
+        activeUrl: images[activeIndex - 1].image_url,
       });
     }
 
@@ -51,6 +60,7 @@ const App = () => {
       ...state,
       activeIndex: activeIndex - 1,
       translate: (activeIndex - 1) * getHeight(),
+      activeUrl: images[activeIndex - 1].image_url,
     });
   };
 
@@ -59,6 +69,7 @@ const App = () => {
       ...state,
       activeIndex: (activeIndex + number),
       translate: ((activeIndex + number) * getHeight()),
+      activeUrl: images[activeIndex + number].image_url,
     });
   };
 
@@ -67,6 +78,7 @@ const App = () => {
       ...state,
       activeIndex: activeIndex - number,
       translate: (activeIndex - number) * getHeight(),
+      activeUrl: images[activeIndex - number].image_url,
     });
   };
   const changeIndex = (event) => {
@@ -91,17 +103,41 @@ const App = () => {
           console.log('response', gotImages);
           setImages(gotImages);
           setIsLoading(false);
+          setState({
+            ...state,
+            activeUrl: gotImages[0].image_url,
+          });
+          gotImages.map((image, index) => {
+            if (index === 0) {
+              setFeature(true);
+            } else {
+              setFeature(false);
+            }
+            console.log('imageinapp', image);
+            console.log('isfeature', isFeature);
+          });
         })
         .catch((error) => console.error(error));
     };
     getImages();
   }, []);
+  useEffect(() => {
+    images.map((image, index) => {
+      if (image.imageIndex === image.activeIndex) {
+        setFeature(true);
+      } else {
+        setFeature(false);
+      }
+      console.log('isfeature in own effect', isFeature);
+    });
+  }, [state.activeIndex]);
   return (isLoading) ? <h1>Loading!</h1> : (
     <div className="wrapper">
       <StackContainer
         handleClick={changeIndex}
         activeIndex={activeIndex}
         images={images}
+        isFeature={isFeature}
       />
       <FeatureImagesContainer
         images={images}
@@ -123,6 +159,7 @@ const App = () => {
         images={images}
         isImageShowing={isImageShowing}
         hide={toggleImage}
+        activeUrl={activeUrl}
       />
     </div>
   );
