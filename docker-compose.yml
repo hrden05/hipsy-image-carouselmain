@@ -1,17 +1,29 @@
 version: '3'
-
 services:
+  mysql:
+    image: mysql:5.7
+    environment:
+        MYSQL_DATABASE: hipsyimage
+        MYSQL_ROOT_PASSWORD: p4j4m4sII!
+    command: --bind-address=*
+    networks:
+        - carousel_net
+    ports: 
+      - '3306:3306'
+    expose: 
+      - '3306'
+
   client:
-    image: carousel:latest
     depends_on:
-      - 'db'
+      - 'mysql'
+    build:
+        context: .
+    networks:
+        - carousel_net
     ports:
       - '3000:3000'
+    stdin_open: true
+    tty: true
+networks:
+    carousel_net:
 
-  db:
-    image: mysql:latest
-    restart: always
-    command: --default-authentication-plugin=mysql_native_password
-    environment:
-      MYSQL_ROOT_PASSWORD: p4j4m4sII!
-      MYSQL_DATABASE: hipsyimage
