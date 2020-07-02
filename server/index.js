@@ -5,7 +5,7 @@ const path = require('path');
 const model = require('./model/images.js');
 
 const app = express();
-const PORT = 3000;
+const PORT = 58008;
 
 app.use(morgan('dev'));
 app.use(parser.json());
