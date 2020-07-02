@@ -13,6 +13,6 @@ db.connectAsync()
   .then(() => db.queryAsync(`DROP DATABASE IF EXISTS ${database}`))
   .then(() => db.queryAsync(`CREATE DATABASE ${database}`))
   .then(() => db.queryAsync(`USE ${database}`))
-  .then(() => tableConfig(db));
+  .finally(() => tableConfig(db));
 
 module.exports = db;
