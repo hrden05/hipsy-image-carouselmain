@@ -95,7 +95,7 @@ const App = () => {
   useEffect(() => {
     const prodId = getRandomInt(1, 101);
     const getImages = () => {
-      axios.get(`/api/images`, {
+      axios.get(`/api/images?itemId=${prodId}`, {
         params: {
           itemId: prodId,
         },
