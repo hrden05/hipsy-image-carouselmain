@@ -1,23 +1,21 @@
 import React from 'react';
 
-class Image extends React.Component {
-  constructor() {
-    super();
-  }
-
-  render() {
-    const divStyle = {
-      backgroundImage: `url(${this.props.source})`,
-      alt: `${this.props.product_id}`,
-      border: '1px solid white',
-      borderRadius: '4px',
-    };
-    return (
-      <div className="Image">
-        <div style={divStyle} className="Image" />
-      </div>
-    );
-  }
-}
+const Image = (props) => {
+  const divStyle = {
+    backgroundImage: `url(${props.source})`,
+    alt: `${props.product_id}`,
+    border: '1px solid white',
+    borderRadius: '4px',
+  };
+  return (
+    <div className="Image">
+      <div
+        style={divStyle}
+        className="Image"
+        onClick={props.handleClick}
+      />
+    </div>
+  );
+};
 
 export default Image;

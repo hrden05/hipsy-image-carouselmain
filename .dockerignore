@@ -1,0 +1,9 @@
+
+node_modules
+.dockerignore
+Dockerfile
+Dockerfile.prod
+.vscode
+coverage
+__snapshots__
+docker-compose.yml
