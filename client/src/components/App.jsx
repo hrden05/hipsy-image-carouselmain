@@ -95,11 +95,7 @@ const App = () => {
   useEffect(() => {
     const itemId = getRandomInt(1, 101);
     const getImages = () => {
-      axios.get(`/api/images`, {
-        params: {
-          itemId,
-        },
-      })
+      axios.get(`/api/images?itemId=${itemId}`)
         .then((response) => {
           const gotImages = response.data[0];
           console.log('response', gotImages);
