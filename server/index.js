@@ -12,17 +12,17 @@ app.use(parser.json());
 app.use(parser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '../client/dist')));
 
-app.get('/api/images', (req, res) => {
-  model.getAll()
-    .then((images) => {
-      res.status(200).send(images);
-    })
-    .catch((error) => {
-      res.status(400).send(error);
-    });
-});
+// app.get('/api/images', (req, res) => {
+//   model.getAll()
+//     .then((images) => {
+//       res.status(200).send(images);
+//     })
+//     .catch((error) => {
+//       res.status(400).send(error);
+//     });
+// });
 
-app.get('/api/images/:itemId', (req, res) => {
+app.get('/api/images', (req, res) => {
   console.log(req.params);
   model.getItem(Number(req.params.itemId))
     .then((images) => {
