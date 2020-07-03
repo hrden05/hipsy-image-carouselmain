@@ -74,7 +74,7 @@ body {
   overflow: hidden;
 }
 
-#app {
+#image-carousel {
   position: relative;
   min-width: 765px;
   max-width: 1075;
