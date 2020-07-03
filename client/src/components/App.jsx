@@ -97,7 +97,7 @@ const App = () => {
     const getImages = () => {
       axios({
         method: 'get',
-        url: `/api/images?itemId=${prodId}`,
+        url: `api/images`,
         params: {
           itemId: prodId,
         },
