@@ -93,9 +93,13 @@ const App = () => {
   };
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
-    const itemId = getRandomInt(1, 101);
+    const prodId = getRandomInt(1, 101);
     const getImages = () => {
-      axios.get(`/api/images?itemId=${itemId}`)
+      axios.get(`/api/images`, {
+        params: {
+          itemId: prodId,
+        },
+      })
         .then((response) => {
           const gotImages = response.data[0];
           console.log('response', gotImages);
