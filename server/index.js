@@ -23,7 +23,7 @@ app.use(express.static(path.join(__dirname, '../client/dist')));
 // });
 
 app.get('/api/images', (req, res) => {
-  const { itemId } = req.params;
+  const { itemId } = req.query;
   console.log(req.params);
   model.getItem(Number(itemId[0]))
     .then((images) => {
