@@ -21,7 +21,7 @@ services:
     networks:
         - carousel_net
     ports:
-      - '80:58008'
+      - '58008:58008'
     stdin_open: true
     tty: true
 networks:

@@ -25,7 +25,7 @@ app.use(express.static(path.join(__dirname, '../client/dist')));
 app.get('/api/images', (req, res) => {
   const { itemId } = req.query;
   console.log(itemId);
-  model.getItem(Number(itemId))
+  model.getItem(itemId)
     .then((images) => {
       res.status(200).send(images);
     })
