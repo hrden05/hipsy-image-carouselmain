@@ -30,7 +30,8 @@
 
 ## Requirements
 
-- Docker/docker-compose
+- Docker
+- Docker-compose
 
 ## Development
 
