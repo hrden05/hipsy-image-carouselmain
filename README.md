@@ -22,7 +22,11 @@
 
 ## Usage
 
-> Few steps to get spinning... Firstly docker-compose up will start the express server and mySQL db.  The express server container needs then to be restarted to properly connect to the database. Populate the database using the docker exec -it command on the express server container, npm run dbCreate and then npm run dbSeed. Finally open the page to view the carousel service.
+> Few steps to get spinning... 
+- Firstly docker-compose up will start the express server and mySQL db.  
+- The express server container needs then to be restarted to properly connect to the database. 
+- Populate the database using the docker exec -it command on the express server container, npm run dbCreate and then npm run dbSeed. 
+- Finally open the page to view the carousel service.
 
 ## Requirements
 
