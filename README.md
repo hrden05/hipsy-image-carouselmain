@@ -1,13 +1,18 @@
-# Project Name
+![Hipsy](https://i.ibb.co/cCZc12x/Screen-Shot-2020-08-01-at-1-56-07-PM.png)  
+![Demo video](/hipsy_demo.gif)  
 
-> Project description
+
+# Hipsy Image Carousel
+
+> Image carousel service on e-commerce site to showcase a number of images for each product.  Allows for cycling through images, viewing them in a featured size or clicking them to view a full size modal.
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/hrden05/proxy
+  - https://github.com/hrden05/hipsy-similar-products
+  - https://github.com/hrden05/etsy_reviews
+  - https://github.com/hrden05/hipsty-product-details-main
+  - https://github.com/hrden05/etsy_topSidebar
 
 ## Table of Contents
 
@@ -17,23 +22,17 @@
 
 ## Usage
 
-> Some usage instructions
+> Few steps to get spinning... Firstly docker-compose up will start the express server and mySQL db.  The express server container needs then to be restarted to properly connect to the database. Populate the database using the docker exec -it command on the express server container, npm run dbCreate and then npm run dbSeed. Finally open the page to view the carousel service.
 
 ## Requirements
 
-An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
-
-- Node 6.13.0
-- etc
+- Docker/docker-compose
 
 ## Development
 
-### Installing Dependencies
+- mySQL database
+- Express.js server
+- React.js hooks front-end
+- Containerized with Docker
 
-From within the root directory:
-
-```sh
-npm install -g webpack
-npm install
-```
 
