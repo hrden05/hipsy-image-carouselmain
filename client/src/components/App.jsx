@@ -102,11 +102,6 @@ const App = () => {
           itemId: prodId,
         },
       })
-      // .get(`/api/images?itemId=${prodId}`, {
-      //   params: {
-      //     itemId: prodId,
-      //   },
-      // })
         .then((response) => {
           const gotImages = response.data[0];
           console.log('response', gotImages);
